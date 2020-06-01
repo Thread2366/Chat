@@ -130,6 +130,7 @@ namespace ChatManager
         }
 
 
+        //Далее функции для работы с группами
 
         public bool CreateGroup(string groupName, GroupAccessMode accessMode)
         {
