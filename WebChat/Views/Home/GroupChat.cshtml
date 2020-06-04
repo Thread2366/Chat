@@ -1,0 +1,33 @@
+﻿@model WebChat.Models.ChatModel
+@{
+    ViewBag.Title = "GroupChat";
+}
+
+<h2>Hello @User.Identity.Name</h2>
+<div id="chat-div">
+    @*@foreach (WebChat.Models.ChatMessage message in Model.Messages)
+        {
+            <div class="sender-div">
+                @message.Sender
+            </div>
+            <div class="message-div">
+                @message.Message
+            </div>
+
+            <div class="time-div">
+                @message.Timestamp
+            </div>
+        }*@
+</div>
+<form action="/Home/GroupChat" method="post" id="ajax-form">
+    <select name="receiver">
+        @foreach (string user in Model.Users)
+        {
+            <option value="@user">@user</option>
+        }
+    </select>
+    <input name="message" type="text" id="message-box" />
+    <input type="button" value="Отправить" onclick="sendForm()" />
+</form>
+<a href="/Home/Chat">К обычному чату</a>
+<script src="~/Scripts/groupchat.js"></script>

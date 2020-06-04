@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework.Internal;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -215,22 +216,25 @@ namespace ChatManager
             return true;
         }
 
-        public List<GroupMessage> GetGroupMessages(Group group, bool unread)
+        public List<GroupMessage> GetGroupMessages()
         {
             if (currentUser == null) return null;
-            var groupMember = context.Participations
-                .SingleOrDefault(p => p.Group.Id == group.Id && p.User.Id == currentUser.Id);
-            if (groupMember == null) return null;
+            var groups = GetUserGroups().Select(g => g.Id);
             var messages = context.GroupMessages
-                .Where(msg => msg.Group.Id == group.Id);
+                .Where(msg => groups.Contains(msg.Group.Id))
+                .ToList();
+            return messages;
+        }
 
-            var result = unread ?
-                messages.Where(msg => msg.Timestamp > groupMember.LastRead).ToList() :
-                messages.ToList();
-
-            groupMember.LastRead = DateTime.Now;
-            context.SaveChanges();
-            return result;
+        public List<GroupMessage> GetGroupMessages(DateTime start, DateTime finish)
+        {
+            if (currentUser == null) return null;
+            var groups = GetUserGroups().Select(g => g.Id);
+            var messages = context.GroupMessages
+                .Where(msg => groups.Contains(msg.Group.Id))
+                .Where(msg => msg.Timestamp >= start && msg.Timestamp < finish)
+                .ToList();
+            return messages;
         }
 
         public List<Group> GetAvailableGroups()
