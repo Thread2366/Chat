@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Главная</h2>
+<form action="/Home/Login" method="post">
+    Логин
+    <input name="login" type="text" />
+    <br />
+    Пароль
+    <input name="password" type="password" />
+    <br />
+    <input type="submit" value="Войти" />
+</form>
+
+<a href="/Home/Register">Регистрация</a>

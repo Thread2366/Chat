@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatManager", "ChatManager.csproj", "{88E91554-ADAA-4CC6-9A63-8ABB8FD5E258}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatManager", "ChatManager\ChatManager.csproj", "{88E91554-ADAA-4CC6-9A63-8ABB8FD5E258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat", "WebChat\WebChat.csproj", "{6E6F2DE2-004A-4081-BEC4-6218AEED150A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,15 @@ Global
 		{88E91554-ADAA-4CC6-9A63-8ABB8FD5E258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E91554-ADAA-4CC6-9A63-8ABB8FD5E258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E91554-ADAA-4CC6-9A63-8ABB8FD5E258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6F2DE2-004A-4081-BEC4-6218AEED150A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6F2DE2-004A-4081-BEC4-6218AEED150A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6F2DE2-004A-4081-BEC4-6218AEED150A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6F2DE2-004A-4081-BEC4-6218AEED150A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1D93C132-5A13-4B5D-A5A8-02984AD3F7F5}
+		SolutionGuid = {06805633-B502-4CE4-8207-3EFDDDA8AA5D}
 	EndGlobalSection
 EndGlobal

@@ -59,12 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizedUser.cs" />
     <Compile Include="ChatContext.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupAccessMode.cs" />
     <Compile Include="GroupMessage.cs" />
-    <Compile Include="ChatManagerTests.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
